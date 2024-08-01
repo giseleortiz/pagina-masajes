@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masajes Profesionales</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Masajes Profesionales</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#" id="abrir-agenda">Agenda</a></li> <!-- Botón para abrir la agenda -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Modal de la Agenda -->
+    <div id="agenda-modal" class="modal">
+        <div class="modal-content">
+            <span class="cerrar">&times;</span>
+            <h2>Agenda de Turnos</h2>
+            <form id="agenda-form">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="turno-disponible">
+                            <td>10:00 AM</td>
+                            <td>Disponible</td>
+                            <td><button type="button" class="reservar-btn" data-time="10:00 AM">Reservar</button></td>
+                        </tr>
+                        <tr class="turno-disponible">
+                            <td>11:00 AM</td>
+                            <td>Disponible</td>
+                            <td><button type="button" class="reservar-btn" data-time="11:00 AM">Reservar</button></td>
+                        </tr>
+                        <!-- Agrega más filas según sea necesario -->
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal del Formulario de Reserva -->
+    <div id="reserva-modal" class="modal">
+        <div class="modal-content">
+            <span class="cerrar-reserva">&times;</span>
+            <h2>Reserva de Turno</h2>
+            <form id="reserva-form">
+                <input type="hidden" id="reserva-time" name="reserva-time">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <button type="submit">Confirmar Reserva</button>
+            </form>
+        </div>
+    </div>
+
+    <section id="inicio" class="hero">
+        <h2>Bienvenidos</h2>
+        <p>A nuestra página</p>
+        <p>Relájate y disfruta de nuestros servicios de masajes de alta calidad.</p>
+    </section>
+
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="service-cards">
+            <div class="card">
+                <img src="images/r.jpg" alt="Masaje Relajante">
+                <h3>Masaje Relajante</h3>
+                <p>Alivia el estrés y la tensión.</p>
+            </div>
+            <div class="card">
+                <img src="images/t.jpg" alt="Masaje Terapéutico">
+                <h3>Masaje Terapéutico</h3>
+                <p>Ayuda en la recuperación muscular.</p>
+            </div>
+            <div class="card">
+                <img src="images/m.jpg" alt="Masaje Deportivo">
+                <h3>Masaje Deportivo</h3>
+                <p>Optimiza el rendimiento físico.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="productos">
+        <h2>Productos</h2>
+        <div class="product-list">
+            <div class="product" data-id="1" data-price="10">
+                <img src="images/aceites.jpg" alt="Aceite Relajante">
+                <h3>Aceite Relajante</h3>
+                <p>Precio: $10</p>
+                <button class="add-to-cart-btn">Añadir al Carrito</button>
+            </div>
+            <div class="product" data-id="2" data-price="15">
+                <img src="images/crema.jpg" alt="Crema para Masajes">
+                <h3>Crema para Masajes</h3>
+                <p>Precio: $15</p>
+                <button class="add-to-cart-btn">Añadir al Carrito</button>
+            </div>
+            <div class="product" data-id="3" data-price="8">
+                <img src="images/velas.jpg" alt="Velas Aromaterapia">
+                <h3>Velas Aromaterapia</h3>
+                <p>Precio: $8</p>
+                <button class="add-to-cart-btn">Añadir al Carrito</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Carrito de Compras -->
+    <div id="cart">
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total-price">0</span></p>
+        <button id="checkout">Realizar Pago</button>
+    </div>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Masajes Profesionales. Todos los derechos reservados(Gisele ortiz).</p>
+    </footer>
+
+    <!-- Carrito de Compras -->
+    <div id="cart">
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total-price">0</span></p>
+        <button id="checkout">Realizar Pago</button>
+    </div>
+
+    <script src="cart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

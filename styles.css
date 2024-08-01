@@ -1,0 +1,398 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#91e7cd41;
+    color: #333;
+}
+
+header {
+    
+    background-color: #008b8b;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background: url('images/banner.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+ 
+}
+ h2{
+    font-size: 2em; 
+    text-align: center;
+}
+.service-cards, .product-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card, .product {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.card img, .product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product button, .form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color:#008b8b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product button:hover, .form button:hover {
+    background-color:#008b5d94;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0eaaa2;
+    color: white;
+    margin-top: 40px;
+}
+
+#cart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: none;
+}
+
+#cart h2 {
+    margin-top: 0;
+}
+
+#cart-items {
+    list-style: none; 
+    padding: 0;
+}
+
+#checkout {
+    padding: 10px;
+background-color:#008b8b;;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#contacto {
+    background-color: #e0ffff; /* Verde cian claro */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Asegura que el padding no incremente el tamaño total */
+}
+
+#contacto h2 {
+    color: #008b8b; /* Verde cian oscuro */
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+#contacto label {
+    color: #008b8b;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    font-family: Arial, sans-serif;
+}
+
+#contacto input[type="text"],
+#contacto input[type="email"],
+#contacto textarea {
+    width: calc(100% - 22px); /* Ajusta el ancho para que quepa dentro del padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #008b8b;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Asegura que el padding no incremente el tamaño total */
+}
+
+#contacto textarea {
+    resize: vertical; /* Permite redimensionar solo verticalmente */
+    min-height: 100px; /* Altura mínima para el textarea */
+}
+
+#contacto button {
+    background-color: #008b8b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    display: block;
+    margin: auto;
+}
+
+#contacto button:hover {
+    background-color: #006f6f;
+}
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro translúcido */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2 {
+    color: #008b8b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.turno-disponible td {
+    background-color: #e0ffff; /* Verde cian claro */
+}
+
+.turno-reservado td {
+    background-color: #ffcccc; /* Rojo claro */
+    color: #a00; /* Texto rojo oscuro */
+}
+
+button {
+    background-color: #008b8b;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #006f6f;
+}
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro translúcido */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px; /* Ajusta el ancho del formulario */
+    border-radius: 8px;
+    position: relative;
+}
+
+.cerrar, .cerrar-reserva {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover, .cerrar-reserva:hover,
+.cerrar:focus, .cerrar-reserva:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2 {
+    color: #008b8b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.turno-disponible td {
+    background-color: #e0ffff; /* Verde cian claro */
+}
+
+.turno-reservado td {
+    background-color: #a00; /* Rojo claro */
+   
+}
+button {
+    background-color: #008b8b;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fd0202;
+}
+
+/* Estilos para el formulario de reserva */
+#reserva-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#reserva-form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#reserva-form input {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#reserva-form button {
+    margin-top: 20px;
+}
+#cart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 300px;
+}
+
+#cart h2 {
+    margin-top: 0;
+}
+
+#cart ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart ul li {
+    margin: 10px 0;
+}
+
+#cart button {
+    background-color:  #a00;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#cart button:hover {
+    background-color:  #a00;
+}
