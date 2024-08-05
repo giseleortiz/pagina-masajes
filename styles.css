@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    
+
     background-color: #008b8b;
     color: rgb(255, 255, 255);
     padding: 20px;
@@ -97,6 +97,29 @@ footer {
     background-color: #0eaaa2;
     color: white;
     margin-top: 40px;
+}
+
+.footer-socials {
+    margin-top: 10px;
+}
+
+.footer-socials a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.footer-socials img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-location {
+    margin-top: 20px;
+}
+.footer-socials i {
+    font-size: 32px;
+    color: white;
+    margin: 0 10px;
 }
 
 #cart {
