@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="/images/Log.png" alt="Logo de Masajes Profesionales" class="logo">
+    </div>
+    <nav class="vertical-menu">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="catalogos.html">Catálogos</a>
+        <!-- Añade más enlaces según sea necesario -->
+    </nav>
+
+    <main>
+    
+        <section id="productos">
+            <h2>BIENVENIDOS A NUESTRA TIENDA</h2>
+            <h2>Productos</h2>
+            <div class="product-list">
+                <div class="product" data-id="1" data-price="10">
+                    <img src="images/aceites.jpg" alt="Aceite Relajante">
+                    <h3>Aceite Relajante</h3>
+                    <p>Precio: $10</p>
+                    <button class="add-to-cart-btn">Añadir al Carrito</button>
+                </div>
+                <div class="product" data-id="2" data-price="15">
+                    <img src="images/crema.jpg" alt="Crema para Masajes">
+                    <h3>Crema para Masajes</h3>
+                    <p>Precio: $15</p>
+                    <button class="add-to-cart-btn">Añadir al Carrito</button>
+                </div>
+                <div class="product" data-id="3" data-price="8">
+                    <img src="images/velas.jpg" alt="Velas Aromaterapia">
+                    <h3>Velas Aromaterapia</h3>
+                    <p>Precio: $8</p>
+                    <button class="add-to-cart-btn">Añadir al Carrito</button>
+                </div>
+            </div>
+        </section>
+        <section id="productos">
+         
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="images/aceites.jpg" alt="Aceite Relajante">
+                        <h3>Aceite Relajante</h3>
+                        <p>Precio: $10</p>
+                        <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/crema.jpg" alt="Crema para Masajes">
+                        <h3>Crema para Masajes</h3>
+                        <p>Precio: $15</p>
+                        <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/velas.jpg" alt="Velas Aromaterapia">
+                        <h3>Velas Aromaterapia</h3>
+                        <p>Precio: $8</p>
+                        <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>document.addEventListener('DOMContentLoaded', function () {
+            const track = document.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            const slideWidth = slides[0].getBoundingClientRect().width;
+        
+            let currentIndex = 0;
+        
+            function moveToSlide(index) {
+                track.style.transform = 'translateX(-' + index * slideWidth + 'px)';
+            }
+        
+            function autoSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                moveToSlide(currentIndex);
+            }
+        
+            setInterval(autoSlide, 3000); // Cambia de imagen cada 3 segundos
+        });</script> 
+    </main>
+    <script src="cart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

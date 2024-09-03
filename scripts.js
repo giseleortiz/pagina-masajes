@@ -44,4 +44,17 @@ document.getElementById('reserva-form').onsubmit = (event) => {
     alert(`Reserva confirmada para ${time}\nNombre: ${nombre}\nTeléfono: ${telefono}\nEmail: ${email}`);
     cerrarModal(reservaModal);
 };
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbar = document.querySelector('.navbar');
 
+    menuToggle.addEventListener('click', function() {
+        navbar.classList.toggle('active');
+    });
+});
+const menuToggle = document.getElementById('menu-toggle');
+const verticalMenu = document.querySelector('.vertical-menu');
+
+menuToggle.addEventListener('click', () => {
+    verticalMenu.classList.toggle('active');
+});
