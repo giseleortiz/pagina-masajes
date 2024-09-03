@@ -4,24 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="tienda.css">
+
 </head>
 <body>
     <div class="logo-container">
         <img src="/images/Log.png" alt="Logo de Masajes Profesionales" class="logo">
     </div>
-    <nav class="vertical-menu">
-        <a href="index.html">Inicio</a>
-        <a href="productos.html">Productos</a>
-        <a href="catalogos.html">Catálogos</a>
-        <!-- Añade más enlaces según sea necesario -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+           
+            <li><a href="#" id="abrir-agenda">Agenda</a></li> <!-- Botón para abrir la agenda -->
+        </ul>
     </nav>
-
     <main>
-    
+     <!-- Modal de la Agenda -->
+     <div id="agenda-modal" class="modal">
+        <div class="modal-content">
+            <span class="cerrar">&times;</span>
+            <h2>Agenda de Turnos</h2>
+            <form id="agenda-form">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="turno-disponible">
+                            <td>10:00 AM</td>
+                            <td>Disponible</td>
+                            <td><button type="button" class="reservar-btn" data-time="10:00 AM">Reservar</button></td>
+                        </tr>
+                        <tr class="turno-disponible">
+                            <td>11:00 AM</td>
+                            <td>Disponible</td>
+                            <td><button type="button" class="reservar-btn" data-time="11:00 AM">Reservar</button></td>
+                        </tr>
+                        <!-- Agrega más filas según sea necesario -->
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal del Formulario de Reserva -->
+    <div id="reserva-modal" class="modal">
+        <div class="modal-content">
+            <span class="cerrar-reserva">&times;</span>
+            <h2>Reserva de Turno</h2>
+            <form id="reserva-form">
+                <input type="hidden" id="reserva-time" name="reserva-time">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <button type="submit">Confirmar Reserva</button>
+            </form>
+        </div>
+    </div>
         <section id="productos">
-            <h2>BIENVENIDOS A NUESTRA TIENDA</h2>
+            <h3>BIENVENIDOS A NUESTRA TIENDA</h3>
             <h2>Productos</h2>
+            <P>
+                NATURALES
+            </P>
             <div class="product-list">
                 <div class="product" data-id="1" data-price="10">
                     <img src="images/aceites.jpg" alt="Aceite Relajante">
@@ -43,49 +99,54 @@
                 </div>
             </div>
         </section>
-        <section id="productos">
-         
-            <div class="carousel">
-                <div class="carousel-track">
-                    <div class="carousel-slide">
-                        <img src="images/aceites.jpg" alt="Aceite Relajante">
-                        <h3>Aceite Relajante</h3>
-                        <p>Precio: $10</p>
-                        <button class="add-to-cart-btn">Añadir al Carrito</button>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="images/crema.jpg" alt="Crema para Masajes">
-                        <h3>Crema para Masajes</h3>
-                        <p>Precio: $15</p>
-                        <button class="add-to-cart-btn">Añadir al Carrito</button>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="images/velas.jpg" alt="Velas Aromaterapia">
-                        <h3>Velas Aromaterapia</h3>
-                        <p>Precio: $8</p>
-                        <button class="add-to-cart-btn">Añadir al Carrito</button>
-                    </div>
+        <section >
+        
+           
+            <div class="product-list">
+                <div class="product" data-id="1" data-price="10">
+                    <img src="images/aceites.jpg" alt="Aceite Relajante">
+                    <h3>Aceite Relajante</h3>
+                    <p>Precio: $10</p>
+                    <button class="add-to-cart-btn">Añadir al Carrito</button>
+                </div>
+                <div class="product" data-id="2" data-price="15">
+                    <img src="images/crema.jpg" alt="Crema para Masajes">
+                    <h3>Crema para Masajes</h3>
+                    <p>Precio: $15</p>
+                    <button class="add-to-cart-btn">Añadir al Carrito</button>
+                </div>
+                <div class="product" data-id="3" data-price="8">
+                    <img src="images/velas.jpg" alt="Velas Aromaterapia">
+                    <h3>Velas Aromaterapia</h3>
+                    <p>Precio: $8</p>
+                    <button class="add-to-cart-btn">Añadir al Carrito</button>
                 </div>
             </div>
+           
         </section>
-        <script>document.addEventListener('DOMContentLoaded', function () {
-            const track = document.querySelector('.carousel-track');
-            const slides = Array.from(track.children);
-            const slideWidth = slides[0].getBoundingClientRect().width;
+        <!-- Carrito de Compras -->
+    <div id="cart">
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total-price">0</span></p>
+        <button id="checkout">Realizar Pago</button>
+    </div>
+    <footer>
+                 
+        <div class="footer-socials">
+            <div class="redes-sociales">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
         
-            let currentIndex = 0;
-        
-            function moveToSlide(index) {
-                track.style.transform = 'translateX(-' + index * slideWidth + 'px)';
-            }
-        
-            function autoSlide() {
-                currentIndex = (currentIndex + 1) % slides.length;
-                moveToSlide(currentIndex);
-            }
-        
-            setInterval(autoSlide, 3000); // Cambia de imagen cada 3 segundos
-        });</script> 
+        <div class="footer-location">
+            <p><strong>Ubicación: Buenos Aires </strong></p>
+        </div>
+      
+        <p><strong>&copy; 2024 Masajes Profesionales. Todos los derechos reservados(Gisele ortiz).</strong></p>
+    </footer>
     </main>
     <script src="cart.js"></script>
     <script src="scripts.js"></script>

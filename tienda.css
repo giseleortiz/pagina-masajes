@@ -1,42 +1,35 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgba(145, 231, 205, 0.25);
+    background-color:#69f0c741;
     color: #333;
 }
-
 header {
-    background-color: #008b8b;
-    color: rgb(255, 255, 255);
-    padding: 10px 20px; /* Reducir el padding para compensar el logo más grande */
+    background-color:#008b8b;
+    padding: 20px;
     text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 500;
+  
 }
 
+header .logo img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
 .logo-container {
     text-align: center;
-    margin: 10px 0; /* Reducir margen para mantener espacio */
+    margin: 20px 0;
+
 }
 
 .logo {
-    width: 250px; /* Aumenta el ancho del logo */
+    max-width: 150px; /* Ajusta el tamaño del logo */
     height: auto;
 }
 
 header h1 {
     margin: 0;
     font-size: 2em;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 10px;
 }
 
 nav ul {
@@ -52,27 +45,17 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #008b8b;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.hero {
-    background: url('images/banner.jpg') no-repeat center center/cover;
-    color: white;
+h2{
+    font-size: 2em; 
     text-align: center;
-    padding: 100px 20px;
 }
-
-.hero h2  {
-    font-size: 2.5em;
- 
-}
- h2 {
+  h3 {
+    color: #008b8b;
     font-size: 2em; 
     text-align: center;
 }
@@ -226,6 +209,11 @@ background-color:#008b8b;;
 
 #contacto button:hover {
     background-color: #006f6f;
+}
+P {
+    color: #008b8b;
+    text-align: center;
+    margin-bottom: 20px;
 }
 .modal {
     display: none; /* Oculto por defecto */
@@ -400,51 +388,94 @@ button:hover {
 #reserva-form button {
     margin-top: 20px;
 }
-
-.carousel {
-    overflow: hidden;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    box-sizing: border-box;
+#cart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: white;
     padding: 20px;
-    text-align: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 300px;
 }
 
-.carousel-slide img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
+#cart h2 {
+    margin-top: 0;
 }
 
-.add-to-cart-btn {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #28a745;
+#cart ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart ul li {
+    margin: 10px 0;
+}
+
+#cart button {
+    background-color:  #a00;
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 10px;
     cursor: pointer;
-    font-size: 1em;
+    border-radius: 5px;
+    width: 100%;
 }
 
-.add-to-cart-btn:hover {
-    background-color: #218838;
+#cart button:hover {
+    background-color:  #a00;
+}
+/**/
+.shop-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.shop-button .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Color del botón */
+    color: #fff; /* Color del texto */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.shop-button .btn:hover {
+    background-color: #0056b3; /* Color del botón al pasar el ratón */
+}
+
+/* Menú vertical (Ejemplo básico) */
+.vertical-menu {
+    width: 200px;
+    border-right: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+.vertical-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.vertical-menu a:hover {
+    background-color: #ddd;
+}
+.vertical-menu {
+    display: none;
+}
+
+/* Menú visible cuando la clase 'active' está aplicada */
+.vertical-menu.active {
+    display: block;
 }
 
 /* Media Queries */
